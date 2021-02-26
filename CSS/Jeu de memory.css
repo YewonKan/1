@@ -1,0 +1,90 @@
+#principle{
+   width: 1250px;
+   height : 640px; 
+   font-family: 'Knewave', cursive;
+   margin: 0;
+   padding:0;
+    background: radial-gradient(#5a85e8,#131fab);
+}
+.titleBox{
+    width: 100%;
+    height: 15%;    
+    font-family: 'Knewave', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(253, 198, 47);
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(110, 110, 110);
+}
+.letterBox{
+    width: 40%;
+    height: 85%;
+    float: left;
+    color: rgb(54, 52, 52);
+    text-align: center;
+}
+
+.upSide{
+    width: 100%;
+    height: 40%;
+    padding: auto;
+    padding-top: 40px;
+}
+.downSide{
+    width: 100%;
+    height: 60%;
+    padding: auto;
+    font-size: 20px;
+}
+
+.gameBox{
+    width: 60%;
+    height: 85%;
+    padding-top: 35px;
+}
+.game1{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 15px;
+    perspective: 500px;
+}
+.card{
+    height: 100px;
+    width : 100px;
+}
+.card-back{
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+}
+.card-back:hover .card-backImg{
+    
+    transform: scale(1.2); 
+}
+.card-backImg{
+    height: 105px;
+    width : 90px;
+}
+.card:hover .card-back{
+    transform: rotateY(-180deg);
+}
+.card:hover .card-front{
+    transform: rotateY(0);
+}
+.frontSideEmpty{
+    height: 105px;
+    width : 90px;
+}
+.frontPicture{
+    position: absolute;
+    height: 65px;
+    width: 65px;
+    left: 12px;
+}
+.card-front{
+    justify-items: center;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    align-self: flex-start;
+    line-height: 105px;
+}

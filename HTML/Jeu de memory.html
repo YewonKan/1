@@ -1,31 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        
-    if(checkBox.checked == true){
-        //créer les 6 cartes
-        if(deux cartes sont ouvert){
-            if (deux cartes sont identiques){
-                
-            }
-        } 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/Jeu de memory.css">
+    <script type="text/javascript" src="../JQuery/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../JQuery/Jeu de memory.js"></script>
+    <title>Memory game</title>
 
-    }
-    else if (couché confirmé){
-        //créer les 12 cartes
-    }
-    else{
-        //créer les 18 cartes
-    }
-    </script>
+
+
 
 </head>
+
 <body>
-    <h1>Hello world</h1>
+    <div id="principle">
+        <div class="titleBox">
+            <h1 class="title">Memory Game</h1>
+        </div>
+        <div class="letterBox">
+            <div class="upSide">
+                <div class="choixDuMode">Choix du mode</div><br>
+                <input type="radio" class="choix" id="debutant" name="1" onclick="click1()">
+                <label for="debutant">Débutant</label><br>
+                <input type="radio" class="choix" id="confirm" name="1" checked="checked" onclick="click1()">
+                <label for="confirm">Confirmé</label><br>
+                <input type="radio" class="choix" name="1" id="expert" onclick="click1()">
+                <label for="expert">Expert</label><br>
+            </div>
+            <div class="downSide">
+                <div class="number">Nombre de coups</div>
+                <input type="text" id="filps">
+            </div>
+        </div>
+        <div class="gameBox">
+            <div class="game1">
+                <div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/008-donut.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/008-donut.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/012-hamburger.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/012-hamburger.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/014-ice cream.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/014-ice cream.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/019-pizza.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/019-pizza.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/021-sausage.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/021-sausage.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/023-taco.png">
+                    </div>
+                </div><div class="card">
+                    <div class="card-back">
+                        <img class="card-backImg" src="../IMG/deck_4.png">
+                    </div>
+                    <div class="card-front">
+                        <img class="frontSideEmpty" src="../IMG/card_empty_large.png">
+                        <img class="frontPicture" src="../IMG/023-taco.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
+
 </html>
