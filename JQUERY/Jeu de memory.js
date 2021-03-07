@@ -66,7 +66,7 @@ function ShowFront() {
         $(this).addClass("visible");
     }
 
-    /* if two card are flipped, check! */
+    /* if two cards are flipped, check! */
 
 
     if ($(".card.visible").length == 2) {
