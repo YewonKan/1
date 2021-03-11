@@ -1,7 +1,7 @@
 
 var coups = 0;
 $(document).ready(SetupGame);
-// $(".choix").click(SelectLevel); this line executes faster than Setupgame and make error(Full blue line)
+// $(".choix").click(SelectLevel); this line executes faster than Setupgame and makes error(Full blue line)
 
 function SelectLevel() {
     if ($("#debutant").is(":checked")) {
