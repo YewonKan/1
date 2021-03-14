@@ -1,7 +1,7 @@
 
+var matchGoal = 12;
 var coups = 0;
 $(document).ready(SetupGame);
-// $(".choix").click(SelectLevel); this line executes faster than Setupgame and makes an error(Full blue line)
 
 function SelectLevel() {
     if ($("#debutant").is(":checked")) {
@@ -16,7 +16,8 @@ function SelectLevel() {
 };
 
 function SetupGame() {
-    var coups = 0;
+    matchGoal = 12;
+    coups = 0;
     $(".game1").css("grid-template-columns", "repeat(4, auto)");
     $("#filps").val(coups);
     $(".game1").empty();
@@ -38,16 +39,11 @@ function SetupGame() {
     for (i = 1; i < numbers.length; i++) {
         random = Math.round(Math.random() * i);
         temp = numbers[i];
-        /* actually I've learned an important concept of coding. 
-        when you give "b = 3" inequality, 3 doesn't change into b 
-        only left side be affected by right side and right side doesn't change.
-        So in this case we put aside the number we had before in array.
-        We could use the same function as what the professer gave us but it can induce some errors */
         numbers[i] = numbers[random];
         numbers[random] = temp;
     }
     console.log(numbers);
-    $('.frontPicture').each(function (index) { /* no need to instanciate index cause it's a function creation */
+    $('.frontPicture').each(function (index) { 
         $(this).parent('.card-front').parent('.card').attr('id', numbers[index])
 
         if (numbers[index] == 1) {
@@ -77,15 +73,13 @@ function SetupGame() {
 }
 
 function ShowFront() {
-    /* flipping card */
+    /* returner les cartes */
     if ($(this).attr("class") == "card") {
 
         $(this).addClass("visible");
     }
 
-    /* if two cards are flipped, check! */
-
-
+    /* si deux cartes sont retournées, verifi si le jeu est terminé*/
     if ($(".card.visible").length == 2) {
         coups++;
         $("#filps").val(coups);
@@ -106,14 +100,17 @@ function ShowFront() {
 }
 
 function GameOver() {
-    if ($(".matched").length == 12) {  //이부분 고쳐야함 variable로 놓고 바꾸면됨
+    if ($(".matched").length == matchGoal) {
         $(".victoryFinish").addClass("visible");
     }
 }
 
 function SetupGameForBeginner() {
-    var coups = 0;
+    coups = 0;
+    matchGoal = 6;
     $(".game1").empty();
+    $(".game1").css("grid-template-columns", "repeat(3, 120px)");
+    $(".game1").css("padding-top","50px")
     $("#filps").val(coups);
     var txt1 = "<div class ='card'>" +
     "<div class ='card-back card-face'>" +
@@ -136,7 +133,7 @@ function SetupGameForBeginner() {
         numbers[random] = temp;
     }
     console.log(numbers);
-    $('.frontPicture').each(function (index) { /* no need to instanciate index cause it's a function creation */
+    $('.frontPicture').each(function (index) { 
         $(this).parent('.card-front').parent('.card').attr('id', numbers[index])
 
         if (numbers[index] == 1) {
@@ -158,7 +155,8 @@ function SetupGameForBeginner() {
 }
 
 function SetupGameForExpert() {
-    var coups = 0;
+    coups = 0;
+    matchGoal = 18;
     $(".game1").empty();
     $(".game1").css("grid-template-columns", "repeat(6, auto)");
     $("#filps").val(coups);

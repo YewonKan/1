@@ -22,21 +22,20 @@
         <div id="victoryText" class="victoryFinish">
             VICTORY
             <span class="overlaySmall"> Click to Restart</span>
-            <!-- La raison pour laquelle j'ai choisi span au lieu de div est pour donner textOverfinish class ensemble  -->
         </div>
         <div class="letterBox">
             <div class="upSide">
                 <div class="choixDuMode">Choix du mode</div><br>
-                <input type="radio" class="choix" id="debutant" name="1" onclick="SelectLevel()" >
+                <input type="radio" class="choix" id="debutant" name="1" onclick="SelectLevel()">
                 <label for="debutant">Débutant</label><br>
-                <input type="radio" class="choix" id="confirm" name="1" checked="checked"  onclick="SelectLevel()" >
+                <input type="radio" class="choix" id="confirm" name="1" checked="checked" onclick="SelectLevel()">
                 <label for="confirm">Confirmé</label><br>
-                <input type="radio" class="choix" name="1" id="expert"  onclick="SelectLevel()">
+                <input type="radio" class="choix" name="1" id="expert" onclick="SelectLevel()">
                 <label for="expert">Expert</label><br>
             </div>
             <div class="downSide">
                 <div class="number">Nombre de coups</div>
-                <input type="text" id="filps">
+                <input type="text" readonly="readonly" id="filps">
             </div>
         </div>
         <div class="gameBox">
@@ -45,7 +44,6 @@
             </div>
         </div>
     </div>
-    <!-- En utilisant jquery empty, enleve game 1 div, après subsititute avec d'autre nombre de cartes-->
 </body>
 
 </html>
